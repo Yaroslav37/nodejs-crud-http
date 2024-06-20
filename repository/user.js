@@ -21,7 +21,7 @@ let users = [
   };
   
   const updateUser = (userId, updatedUser) => {
-    const userIndex = users.findindex(p => p.id === userId);
+    const userIndex = users.findIndex(p => p.id === userId);
   
     if (userIndex !== -1) {
       users[userIndex] = { ...users[userIndex], ...updatedUser, id: userId };
@@ -32,7 +32,7 @@ let users = [
   };
   
   const deleteUser = (userId) => {
-    const userIndex = users.find(p => p.id === userId);
+    const userIndex = users.findIndex(p => p.id === userId);
   
     if (userIndex !== -1) {
       return users.splice(userIndex, 1)[0];

@@ -18,7 +18,8 @@ const handleGet = (req, res, parsedUrl) => {
       sendResponse(res, 200, CONTENT_TYPE_JSON, users);
     } else if (parsedUrl.path.startsWith("/api/users")) {
       // Extract the user ID from either path or query parameters
-      const userId = parsedUrl.query.id || parseInt(parsedUrl.path.split('/').pop());
+      const userId = parsedUrl.query.id || parsedUrl.path.split('/').pop();
+      console.log(userId);
       // Get the user by ID
       const user = getUserById(userId);
 
@@ -87,7 +88,7 @@ const handlePut = (req, res, parsedUrl) => {
         // Parsing the JSON data from the request body
         const updatedUser = JSON.parse(requestBody);
         // Extracting the user ID from the request URL
-        const userId = parseInt(parsedUrl.path.split('/').pop());
+        const userId = parsedUrl.path.split('/').pop();
         // Updating the user in the data store
         const updatedUserInfo = updateUser(userId, updatedUser);
   
@@ -113,7 +114,7 @@ const handlePut = (req, res, parsedUrl) => {
 const handleDelete = (req, res, parsedUrl) => {
   try{
     // Extracting the user ID from the request URL
-    const userId = parseInt(parsedUrl.path.split('/').pop());
+    const userId = parsedUrl.path.split('/').pop();
     // Deleting the user from the data store
     const deletedUser = deleteUser(userId);
 
