@@ -9,8 +9,8 @@ const handleRequest = (req, res) => {
   // Delegate specific route handling to specialized modules
   if (parsedUrl.pathname == '/'){
     // Return HTML response for the home page
-    sendResponse(res, 200, CONTENT_TYPE_HTML, `<b>Users <a href = '/user'>list</a> page</b>`);
-  }else if (parsedUrl.pathname.startsWith('/user')) {
+    sendResponse(res, 200, CONTENT_TYPE_HTML, `<b>Users <a href = '/api/users'>list</a> page</b>`);
+  }else if (parsedUrl.pathname.startsWith('/api/users')) {
     handleUserRoutes(req, res, parsedUrl);
   } else {
     sendResponse(res, 404, CONTENT_TYPE_JSON, { error: 'Endpoint not found' });

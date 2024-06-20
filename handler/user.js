@@ -12,10 +12,10 @@ import { CONTENT_TYPE_JSON } from '../constant/common.js';
 // Handling GET requests to retrieve user information
 const handleGet = (req, res, parsedUrl) => {
   // Check if the path is the user list endpoint
-  if (parsedUrl.path === '/user') {
+  if (parsedUrl.path === '/api/users') {
     // Send a response with the list of users
     sendResponse(res, 200, CONTENT_TYPE_JSON, users);
-  } else if (parsedUrl.path.startsWith("/user")) {
+  } else if (parsedUrl.path.startsWith("/api/users")) {
     // Extract the user ID from either path or query parameters
     const userId = parsedUrl.query.id || parseInt(parsedUrl.path.split('/').pop());
     // Get the user by ID
