@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-http",
+  "version": "1.0.0",
+  "description": "This is a simple CRUD (Create, Read, Update, Delete) API server implemented in Node.js using the HTTP module. The server manages a collection of users and provides endpoints to perform CRUD operations on these users.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "uuid": "^10.0.0",
+    "v4": "^0.0.1"
+  }
+}
